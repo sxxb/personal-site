@@ -1,16 +1,18 @@
-function Home() {
+import React, { Component } from "react";
+
+function Nav() {
   return (
     <header>
       <nav>
         <menu>
           <li>
-            <a href="">work</a>
+            <a href="/work">work</a>
           </li>
           <li>
             <a href="/">sxb</a>
           </li>
           <li>
-            <a href="">cv</a>
+            <a href="/Cv">cv</a>
           </li>
         </menu>
       </nav>
@@ -18,4 +20,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Nav;
