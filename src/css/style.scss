@@ -1,36 +1,67 @@
-$c: hsl(0, 100, 50);
-$c-d1:hsl(0, 100, 40);
-$c-d2:hsl(0, 100, 30);
-$c-l1:hsl(0, 70, 70);
-$c-l2:hsl(0, 50, 90);
-$c-c: hsl(180, 100, 50);
-$c-t: hsl(0, 20, 20);
+@import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,800i,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Barlow:500,500i&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap');
+
+@keyframes fadeIn {
+  0%   { opacity: 0}
+  100% { opacity: 1}
+}
+
+@keyframes fadeOut {
+  0%   { opacity: 1}
+  100% { opacity: 0}
+}
+
+$c:   hsl(357.2, 100%, 58.4%);
+$c-d1:hsl(357.2, 100%, 50%);
+$c-d2:hsl(357.2, 100%, 40%);
+$c-l1:hsl(357.2, 100%, 70%);
+$c-l2:hsl(357.2, 50%, 90%);
+$c-c: hsl(180, 100%, 50%);
+$c-t: hsl(0, 0%, 20%);
 $bs:5px 5px 5px red;
 $ts:0 0 2px blue;
+$title-font: "Barlow Semi Condensed", sans-serif;
+$body-font: "Barlow", sans-serif;
+$serif-font: "Lora", Georgia, serif;
+$transition: 0.2s ease;
 
 
 html {
   font-size:100%;
   -webkit-text-size-adjust: 100%;
+  @media only screen and (min-width:1200px) {
+    font-size:110%;
+  }
   * {
     box-sizing:border-box;
     margin:0;
     padding:0;
     border:0;
     outline:0;
-    transition:0.2s ease;
     list-style-type:none;
     list-style-position:outside;
-    font-family:"Barlow", Roboto, sans-serif;
+    font-family: $body-font;
+    color:$c-t;
     line-height:1.4em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      -webkit-font-smoothing: auto;
+      -moz-osx-font-smoothing: auto;
+    }
   }
   *::before,*::after {
   box-sizing:inherit;
   }
+  *::selection {
+    background-color:rgba($c, 0.4);
+  }
 }
 
     header {
-      font-size:0.85rem;
+      font-size:0.95rem;
       width:100%;
       height:50px;
       display:flex;
@@ -43,17 +74,19 @@ html {
           align-items:center;
           justify-content:center;
           li {
-            margin:0 2rem;
+            margin:0 2.5rem;
             a {
               border-bottom:0.1rem solid #fff;
               text-decoration:none;
               padding:0.25rem;
               color:$c-t;
+              font-family:$title-font;
+              transition:$transition;
               &:hover {
-                border-bottom:0.1rem solid $c-t;
+                border-bottom:0.1rem solid $c;
               }
               &.active {
-                border-bottom:0.1rem solid $c-t;
+                border-bottom:0.1rem solid $c;
               }
             }
           }
@@ -62,20 +95,26 @@ html {
     }
     main {
       width:95%;
-      max-width:60rem;
+      max-width:50rem;
       margin:auto;
       min-height:calc(100vh - 50px - 1.5rem);
       padding:3rem 0;
       h1 {
         font-size:2rem;
+        font-family:$title-font;
+        font-weight:800;
       }
       h2 {
         font-size:1.75rem;
         font-style:italic;
-        color:$c-d2
+        color:$c;
+        font-family:$title-font;
+        font-weight:800;
       }
       h3 {
         font-size: 1.5rem;
+        font-family:$title-font;
+        font-weight:400;
       }
       p {
         font-size:1rem;
@@ -86,6 +125,7 @@ html {
         max-width:40rem;
         margin:auto;
         padding:2rem;
+        font-style:italic;
         &::before , &::after {
           content: "''";
         }
@@ -107,7 +147,31 @@ html {
       > * {
         margin-bottom:1rem !important;
       }
-    }
+
+      .flex {
+          display: flex;
+          justify-content: space-between;
+        }
+      .centre {align-items: center;}
+      .row {flex-direction:row;}
+      .column {flex-direction:column;}
+      .break {width: 50%;}
+
+      &.cv {
+        .section {
+          margin-bottom:2rem;
+        }
+        .item {
+          margin-bottom:1rem;
+        }
+        h1 {}
+        h2 {}
+        h3 {}
+        h4 {font-weight:bold;}
+        h5 {font-weight:bold;}
+        h6 {font-weight:400;font-style:italic;margin:0 0.35rem;}
+      }
+      }
     footer {
       font-size:0.85rem;
       width:100%;

@@ -1,18 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 function Experience(props) {
   return (
     <li className="item">
-      <div className="heading">
+      <div className="heading  flex row">
         <div className="title">
-          <h2>{props.jobTitle}</h2>
-          <h3>{props.employer}</h3>
+          <h3>{props.jobTitle}</h3>
+          <h4>{props.employer}</h4>
         </div>
-        <div className="duration">
-          <h4>{props.startDate}</h4>
-          <h5>to</h5>
-          <h4>{props.endDate}</h4>
+        <div className="duration  flex row centre">
+          <h5>{props.startDate}</h5>
+          <h6>to</h6>
+          <h5>{props.endDate}</h5>
         </div>
       </div>
       <div className="description">
@@ -24,15 +23,15 @@ function Experience(props) {
 function Education(props) {
   return (
     <li className="item">
-      <div className="heading">
+      <div className="heading flex row">
         <div className="title">
-          <h2>{props.degree}</h2>
-          <h3>{props.university}</h3>
+          <h3>{props.degree}</h3>
+          <h4>{props.university}</h4>
         </div>
-        <div className="duration">
-          <h4>{props.startDate}</h4>
-          <h5>to</h5>
-          <h4>{props.endDate}</h4>
+        <div className="duration  flex row centre">
+          <h5>{props.startDate}</h5>
+          <h6>to</h6>
+          <h5>{props.endDate}</h5>
         </div>
       </div>
       <div className="description">
@@ -46,12 +45,12 @@ function Reference(props) {
     <li className="item">
       <div className="heading">
         <div className="title">
-          <h2>{props.name}</h2>
-          <h3>{props.employer}</h3>
+          <h3>{props.name}</h3>
+          <h4>{props.employer}</h4>
         </div>
       </div>
       <div className="description">
-        <p>{props.email} + {props.phone}</p>
+        <p><a href={"mailto:" + props.email} >{props.email}</a> + <a href={"tel:" + props.phone}>{props.phone}</a></p>
       </div>
     </li>
   )
@@ -59,34 +58,34 @@ function Reference(props) {
 
 function Cv() {
   return (
-    <div className="resumeContainer">
-      <div>
+    <main className="cv">
+      <div className="flex row">
         <div>
           <h1>Scott Belcher</h1>
           <h2>C.V</h2>
         </div>
-        <div className="contact-info">
+        <div className="flex column contact-info">
           <a href="sms:0400123456">0400 123 456</a>
           <a href="mailto:email@domain.com">email@domain.com</a>
           <a href="/">Something Else</a>
         </div>
       </div>
-      <main className="container">
-        <div className="experience">
-          <h3>Experience</h3>
+      <div className="flex column">
+        <div className="experience section">
+          <h2>Experience</h2>
           <ul>
-            <Experience jobTitle="M" employer="W" startDate="2017" endDate="Present" description="tbc" />
+            <Experience jobTitle="Marketing and Design Officer" employer="Wavecom" startDate="2017" endDate="Present" description="tbc" />
             <Experience jobTitle="M" employer="W" startDate="2017" endDate="Present" description="tbc" />
           </ul>
         </div>
-        <div className="education">
-          <h3>Education</h3>
+        <div className="education section">
+          <h2>Education</h2>
           <ul>
-            <Education degree="B Econ" university="UoA" startDate="2018" endDate="2021" description="tbc" />
+            <Education degree="Bachelor of Economics" university="University of Adelaide" startDate="2018" endDate="2021" description="tbc" />
           </ul>
         </div>
-        <div className="skills">
-          <h3>Skills</h3>
+        <div className="skills section">
+          <h2>Skills</h2>
           <div className="skills flex">
           <ul className="break">
             <li>Policy Analysis</li>
@@ -106,15 +105,15 @@ function Cv() {
           </ul>
           </div>
         </div>
-        <div className="references">
-          <h3>References</h3>
+        <div className="references section">
+          <h2>References</h2>
           <ul>
-            <Reference name="L" employer="W" email="X@Y" phone="000" />
-            <Reference name="L" employer="W" email="X@Y" phone="000" />
+            <Reference name="Les Clifford" employer="Wavecom" email="les.clifford@wavecom.com.au" phone="xyz" />
+            <Reference name="Jamie Gatt" employer="Lightime Illumination" email="X@Y" phone="xyz" />
           </ul>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
 export default Cv;
