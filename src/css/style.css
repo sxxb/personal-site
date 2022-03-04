@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,800i,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,,500i,800i,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Barlow:500,500i&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap");
 @keyframes fadeIn {
@@ -93,21 +93,21 @@ main {
   min-height: calc(100vh - 50px - 1.5rem);
   padding: 3rem 0;
 }
+main h1, main h2, main h3, main h4, main h5, main h6 {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
 main h1 {
   font-size: 2rem;
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-weight: 800;
+  font-weight: 700;
 }
 main h2 {
   font-size: 1.75rem;
   font-style: italic;
   color: #ff2b35;
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-weight: 800;
+  font-weight: 700;
 }
 main h3 {
   font-size: 1.5rem;
-  font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 400;
 }
 main p {
@@ -133,6 +133,18 @@ main code {
   background: #f2d9da;
   font-family: monospace;
 }
+main ul li {
+  margin: 0.75rem 0 0.75rem;
+}
+main ul li:last-of-type {
+  margin-bottom: 0;
+}
+main ul li::before {
+  content: "+";
+  display: inline-block;
+  color: #ff2b35;
+  padding-right: 0.5rem;
+}
 main > * {
   margin-bottom: 1rem !important;
 }
@@ -152,22 +164,73 @@ main .column {
 main .break {
   width: 50%;
 }
-main.cv .section {
-  margin-bottom: 2rem;
-}
-main.cv .item {
+main#cv .section {
   margin-bottom: 1rem;
 }
-main.cv h4 {
-  font-weight: bold;
+main#cv .item {
+  margin-bottom: 2rem;
 }
-main.cv h5 {
-  font-weight: bold;
+main#cv h1 {
+  color: #ff2b35;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1em;
 }
-main.cv h6 {
+main#cv h2 {
+  color: #333333;
   font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1em;
+}
+main#cv h3 {
+  color: #ff2b35;
+  font-weight: 700;
+  font-size: 1.8rem;
   font-style: italic;
-  margin: 0 0.35rem;
+  margin-bottom: 0.5rem;
+}
+main#cv h4 {
+  color: #333333;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+main#cv h5 {
+  color: #666666;
+  font-weight: 500;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+main#cv h6 {
+  color: #333333;
+  font-weight: 700;
+  font-size: 1rem;
+}
+main#cv a {
+  color: #333333;
+  transition: 0.2s ease;
+  text-decoration: none;
+}
+main#cv a:hover {
+  color: #ff2b35;
+}
+main#cv #cvHead {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ff2b35;
+}
+main#cv #duration p {
+  font-style: italic;
+  margin: 0 0.25rem;
+}
+main#cv #contact-info {
+  justify-content: center;
+  text-align: right;
+}
+main#cv #contact-info a {
+  display: block;
+  font-weight: 700;
+  line-height: 1.5rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1.2rem;
 }
 
 footer {
@@ -196,9 +259,23 @@ footer p #country:after {
   padding: 0.25rem;
   background: white;
   box-shadow: 5px 5px 5px red;
+  transition: 0.2s ease;
 }
 footer p #country:hover:after {
   display: block;
+  animation: fadeIn 0.2s ease-in;
+  animation-iteration-count: 1;
+}
+
+@media screen and (max-width: 599px) {
+  .flex {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .break {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
