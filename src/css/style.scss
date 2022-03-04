@@ -52,6 +52,9 @@ html {
               &:hover {
                 border-bottom:0.1rem solid $c-t;
               }
+              &.active {
+                border-bottom:0.1rem solid $c-t;
+              }
             }
           }
         }
@@ -137,4 +140,3 @@ html {
       }
 
     }
-  

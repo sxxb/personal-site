@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 import './css/style.css'
 
-import Nav from './components/Nav'
 import Main from './components/Main'
 import Footer from './components/Footer'
 
@@ -11,7 +10,6 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-      <Nav />
       <Main />
       <Footer />
   </React.StrictMode>,

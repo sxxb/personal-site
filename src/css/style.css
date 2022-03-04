@@ -45,6 +45,10 @@ header nav menu li a:hover {
   border-bottom: 0.1rem solid #3d2929;
 }
 
+header nav menu li a.active {
+  border-bottom: 0.1rem solid #3d2929;
+}
+
 main {
   width: 95%;
   max-width: 60rem;
