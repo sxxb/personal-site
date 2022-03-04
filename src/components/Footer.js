@@ -8,7 +8,10 @@ function Footer() {
         +
         <span id="currentYear">{new Date().getFullYear()}</span>
         +
-        <span id="country" data-tooltip="This website was made on the land of the Kaurna people, sovereignty of which was never ceded.">Tarntanya</span>
+        <span id="country">Tarntanya</span>
+      </p>
+      <p>
+        This website was made on the land of the Kaurna people, sovereignty of which was never ceded.
       </p>
     </footer>
   );

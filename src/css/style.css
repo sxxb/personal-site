@@ -232,39 +232,61 @@ main#cv #contact-info a {
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 1.2rem;
 }
+main#contact form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  max-width: 30rem;
+  margin: 2.5rem auto;
+}
+main#contact form input, main#contact form textarea {
+  background-color: #f4f4f4;
+  padding: 0.5rem 0.5rem;
+  margin-top: 1rem;
+  border-left: 0.125rem solid #ff2b35;
+  font-size: 0.8rem;
+}
+main#contact form button {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  transition: 0.2s ease;
+  padding: 0.5rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #ff2b35;
+  color: white;
+}
+main#contact form button:hover {
+  background-color: #ff666d;
+}
+main#contact form .errorPlaceholder {
+  height: 1.5rem;
+}
+main#contact form .errorPlaceholder label {
+  margin: 0.125rem auto;
+  color: #666666;
+  font-size: 0.75rem;
+  font-style: italic;
+  position: relative;
+  top: 5%;
+}
 
 footer {
   font-size: 0.85rem;
   width: 100%;
-  height: 1.5rem;
+  height: 3rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+footer p {
+  color: #666666;
+}
 footer p span {
   margin: 0 0.5rem;
-}
-footer p #country {
-  cursor: grabbing;
-}
-footer p #country:after {
-  display: none;
-  content: attr(data-tooltip);
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  bottom: 3rem;
-  left: 0;
-  transition: 0.2s ease;
-  padding: 0.25rem;
-  background: white;
-  box-shadow: 5px 5px 5px red;
-  transition: 0.2s ease;
-}
-footer p #country:hover:after {
-  display: block;
-  animation: fadeIn 0.2s ease-in;
-  animation-iteration-count: 1;
+  color: #666666;
 }
 
 @media screen and (max-width: 599px) {

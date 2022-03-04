@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import './css/style.css'
 
 import Main from './components/Main'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 import reportWebVitals from './reportWebVitals';
@@ -11,6 +12,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
       <Main />
+      <Contact />
       <Footer />
   </React.StrictMode>,
   document.getElementById('root')
