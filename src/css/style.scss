@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,,500i,800i,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Barlow:500,500i&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap');
 
 @keyframes fadeIn {
   0%   { opacity: 0}
@@ -25,13 +24,21 @@ $bs-s:0 5px 5px hsla(0, 0%, 20%, 0.125);
 $ts:0 0 2px blue;
 $title-font: "Barlow Semi Condensed", sans-serif;
 $body-font: "Barlow", sans-serif;
-$serif-font: "Lora", Georgia, serif;
 $transition: 0.2s ease;
 
+@media (prefers-color-scheme: dark) {
+    :root {
+    filter:invert(90%) hue-rotate(180deg);
+    source, img, video {
+       filter: invert(100%)  hue-rotate(180deg);
+     }
+    }
+}
 
 html {
   font-size:100%;
   -webkit-text-size-adjust: 100%;
+  background:white;
   @media only screen and (min-width:1200px) {
     font-size:110%;
   }
@@ -238,6 +245,32 @@ html {
               font-style:italic;
               position:relative;
               top:5%;
+            }
+          }
+        }
+      }
+      &#work {
+        section {
+          h3 {
+             font-weight:800;
+            font-size:1.6rem;
+          }
+          h4 {font-style:italic;font-weight:400;font-size:1.2rem;}
+          figure {
+            align-items:stretch;
+            picture {
+             overflow:hidden;
+             width:100%;
+             height:auto;
+             display:flex;
+              source, img {
+                width:100%;
+              }
+            }
+            figcaption {
+             background:$c;
+             color:$c-t;
+             padding: 2rem;
             }
           }
         }

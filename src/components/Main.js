@@ -4,12 +4,12 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 
 import Nav from './Nav'
 import Home from './Home'
-import Cv from './Cv'
+import Cv from './CV'
+import Contact from './Contact'
 import Work from './Work'
 
 function Main() {
@@ -19,6 +19,7 @@ function Main() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Cv" element={<Cv />} />
+        <Route path="/Contact" element={<Contact />} />
         <Route path="/Work" element={<Work />} />
       </Routes>
     </Router>

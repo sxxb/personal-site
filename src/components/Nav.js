@@ -11,10 +11,16 @@ function Nav() {
               <Link to="/work">work</Link>
             </li>
             <li>
+              <Link to="/Cv">cv</Link>
+            </li>
+            <li>
               <Link to="/">sxb</Link>
             </li>
             <li>
-              <Link to="/Cv">cv</Link>
+              <Link to="/Contact">contact</Link>
+            </li>
+            <li>
+              <Link to="/">tbc</Link>
             </li>
           </menu>
         </nav>

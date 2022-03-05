@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,,500i,800i,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Barlow:500,500i&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap");
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -17,9 +16,18 @@
     opacity: 0;
   }
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+    filter: invert(90%) hue-rotate(180deg);
+  }
+  :root source, :root img, :root video {
+    filter: invert(100%) hue-rotate(180deg);
+  }
+}
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
+  background: white;
 }
 @media only screen and (min-width: 1200px) {
   html {
@@ -270,6 +278,32 @@ main#contact form .errorPlaceholder label {
   font-style: italic;
   position: relative;
   top: 5%;
+}
+main#work section h3 {
+  font-weight: 800;
+  font-size: 1.6rem;
+}
+main#work section h4 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+main#work section figure {
+  align-items: stretch;
+}
+main#work section figure picture {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+main#work section figure picture source, main#work section figure picture img {
+  width: 100%;
+}
+main#work section figure figcaption {
+  background: #ff2b35;
+  color: #333333;
+  padding: 2rem;
 }
 
 footer {
