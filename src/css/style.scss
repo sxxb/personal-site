@@ -279,8 +279,10 @@ html {
          color:white;
         span {
           margin:0 0.5rem;
-          color: white;}
+          color: white;
+        }
       }
+    }
     @media screen and (max-width: 599px) {
       .flex {
         flex-direction: column;
