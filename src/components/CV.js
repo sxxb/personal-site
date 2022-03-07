@@ -59,11 +59,9 @@ function Reference(props) {
 function Cv() {
   return (
     <main id="cv">
-      <div id="cvHead" className="flex row">
-        <div>
-          <h1>Scott Belcher</h1>
-          <h2>C.V</h2>
-        </div>
+      <div id="cvHead" className="flex column">
+        <h1>Scott Belcher</h1>
+        <h2>C.V</h2>
       </div>
       <div id="cvBody" className="flex column">
         <div id="experience" className="section">
