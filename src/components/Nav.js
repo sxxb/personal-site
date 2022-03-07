@@ -8,10 +8,10 @@ function Nav() {
         <nav>
           <menu>
             <li>
-              <Link to="/work">work</Link>
+              <Link to="/Work">work</Link>
             </li>
             <li>
-              <Link to="/Cv">cv</Link>
+              <Link to="/CV">cv</Link>
             </li>
             <li>
               <Link to="/">sxb</Link>

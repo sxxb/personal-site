@@ -16,14 +16,6 @@
     opacity: 0;
   }
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    filter: invert(90%) hue-rotate(180deg);
-  }
-  :root source, :root img, :root video {
-    filter: invert(100%) hue-rotate(180deg);
-  }
-}
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -44,6 +36,7 @@ html * {
   list-style-position: outside;
   font-family: "Barlow", sans-serif;
   color: #333333;
+  background: inherit;
   line-height: 1.4em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -98,25 +91,47 @@ main {
   width: 95%;
   max-width: 50rem;
   margin: auto;
-  min-height: calc(100vh - 50px - 1.5rem);
+  min-height: calc(100vh - 50px);
   padding: 3rem 0;
 }
 main h1, main h2, main h3, main h4, main h5, main h6 {
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 main h1 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-main h2 {
-  font-size: 1.75rem;
-  font-style: italic;
   color: #ff2b35;
   font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1em;
+  text-align: center;
+}
+main h2 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1em;
+  text-align: center;
 }
 main h3 {
+  color: #ff2b35;
+  font-weight: 700;
+  font-size: 1.8rem;
+  font-style: italic;
+}
+main h4 {
+  color: #333333;
+  font-weight: 700;
   font-size: 1.5rem;
-  font-weight: 400;
+}
+main h5 {
+  color: #666666;
+  font-weight: 500;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+main h6 {
+  color: #333333;
+  font-weight: 700;
+  font-size: 1rem;
 }
 main p {
   font-size: 1rem;
@@ -138,7 +153,7 @@ main code {
   max-width: 40rem;
   margin: auto;
   padding: 2rem;
-  background: #f2d9da;
+  background: #f4bec0;
   font-family: monospace;
 }
 main ul li {
@@ -153,8 +168,8 @@ main ul li::before {
   color: #ff2b35;
   padding-right: 0.5rem;
 }
-main > * {
-  margin-bottom: 1rem !important;
+main a {
+  text-decoration: none;
 }
 main .flex {
   display: flex;
@@ -173,45 +188,10 @@ main .break {
   width: 50%;
 }
 main#cv .section {
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 main#cv .item {
   margin-bottom: 2rem;
-}
-main#cv h1 {
-  color: #ff2b35;
-  font-weight: 700;
-  font-size: 2.5rem;
-  line-height: 1em;
-}
-main#cv h2 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.8rem;
-  line-height: 1em;
-}
-main#cv h3 {
-  color: #ff2b35;
-  font-weight: 700;
-  font-size: 1.8rem;
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-main#cv h4 {
-  color: #333333;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-main#cv h5 {
-  color: #666666;
-  font-weight: 500;
-  font-size: 1.1rem;
-  font-style: italic;
-}
-main#cv h6 {
-  color: #333333;
-  font-weight: 700;
-  font-size: 1rem;
 }
 main#cv a {
   color: #333333;
@@ -220,6 +200,12 @@ main#cv a {
 }
 main#cv a:hover {
   color: #ff2b35;
+}
+main#cv h1, main#cv h2 {
+  text-align: left;
+}
+main#cv h3 {
+  margin-bottom: 0.5rem;
 }
 main#cv #cvHead {
   padding-bottom: 1rem;
@@ -248,11 +234,15 @@ main#contact form {
   margin: 2.5rem auto;
 }
 main#contact form input, main#contact form textarea {
-  background-color: #f4f4f4;
+  background-color: #f0f0f0;
   padding: 0.5rem 0.5rem;
   margin-top: 1rem;
   border-left: 0.125rem solid #ff2b35;
   font-size: 0.8rem;
+}
+main#contact form textarea {
+  min-height: 6rem;
+  height: auto;
 }
 main#contact form button {
   margin-top: 1.5rem;
@@ -266,18 +256,28 @@ main#contact form button {
   color: white;
 }
 main#contact form button:hover {
-  background-color: #ff666d;
+  transform: translate(4px, -4px);
+  box-shadow: -4px 4px 0 #0004;
+}
+main#contact form button:active {
+  transform: translate(0, 0);
+  box-shadow: 0 0 0 #0000;
 }
 main#contact form .errorPlaceholder {
   height: 1.5rem;
 }
 main#contact form .errorPlaceholder label {
   margin: 0.125rem auto;
+  line-height: 1em;
+  padding-left: 0.75rem;
   color: #666666;
   font-size: 0.75rem;
   font-style: italic;
   position: relative;
   top: 5%;
+}
+main#work section {
+  margin-top: 2rem;
 }
 main#work section h3 {
   font-weight: 800;
@@ -302,25 +302,65 @@ main#work section figure picture source, main#work section figure picture img {
 }
 main#work section figure figcaption {
   background: #ff2b35;
-  color: #333333;
+  color: white;
   padding: 2rem;
+}
+main#work menu {
+  display: none;
+  position: fixed;
+  bottom: 14rem;
+  right: calc(5% + 50rem + ((100vw - 50rem) / 2));
+  z-index: 100;
+}
+@media screen and (min-width: 1500px) {
+  main#work menu {
+    display: block;
+  }
+}
+main#work menu li {
+  display: flex;
+  list-style-type: none;
+}
+main#work menu li a {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  color: white;
+  font-weight: bold;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  transition: 0.1s;
+  background: #ff2b35;
+  background-size: 300% 100%;
+}
+main#work menu li a:hover {
+  transform: translate(4px, -4px);
+  box-shadow: -4px 4px 0 #0004;
+}
+main#work menu li a:active {
+  transform: translate(0, 0);
+  box-shadow: 0 0 0 #0000;
 }
 
 footer {
   font-size: 0.85rem;
   width: 100%;
-  height: 3rem;
+  height: 12rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  background-color: #ff2b35;
+  color: white;
 }
 footer p {
-  color: #666666;
+  margin: 0.5rem auto;
+  width: 90%;
+  max-width: 25em;
+  color: white;
 }
 footer p span {
   margin: 0 0.5rem;
-  color: #666666;
+  color: white;
 }
 
 @media screen and (max-width: 599px) {

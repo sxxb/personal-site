@@ -16,7 +16,7 @@ function ContactForm() {
          } else if (
            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
          ) {
-           errors.email = "That's not a valid email address";
+           errors.email = "I don't think that's a valid email address";
          }
          if (!values.message) {
            errors.message = "What can I do for you?";
@@ -42,6 +42,7 @@ function ContactForm() {
            <button type="submit" disabled={isSubmitting}>
              Submit
            </button>
+           <div className="messageContainer"></div>
          </Form>
        )}
 
@@ -53,7 +54,7 @@ function ContactForm() {
 function Contact() {
   return (
     <main id="contact">
-      <h1>Contact</h1>
+      <h1>Get in touch</h1>
       <ContactForm />
     </main>
   )

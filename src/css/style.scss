@@ -19,6 +19,7 @@ $c-l2:hsl(357.2, 70%, 85%);
 $c-c: hsl(180, 100%, 50%);
 $c-t: hsl(0, 0%, 20%);
 $c-tl: hsl(0, 0%, 40%);
+$c-tc: hsl(0, 0%, 100%);
 $bs-l:0 5px 25px hsla(0, 0%, 20%, 0.25);
 $bs-s:0 5px 5px hsla(0, 0%, 20%, 0.125);
 $ts:0 0 2px blue;
@@ -26,14 +27,14 @@ $title-font: "Barlow Semi Condensed", sans-serif;
 $body-font: "Barlow", sans-serif;
 $transition: 0.2s ease;
 
-@media (prefers-color-scheme: dark) {
-    :root {
-    filter:invert(90%) hue-rotate(180deg);
-    source, img, video {
-       filter: invert(100%)  hue-rotate(180deg);
-     }
-    }
-}
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//     filter:invert(90%) hue-rotate(180deg);
+//     source, img, video {
+//        filter: invert(100%)  hue-rotate(180deg);
+//      }
+//     }
+// }
 
 html {
   font-size:100%;
@@ -52,6 +53,7 @@ html {
     list-style-position:outside;
     font-family: $body-font;
     color:$c-t;
+    background:inherit;
     line-height:1.4em;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -106,15 +108,29 @@ html {
       width:95%;
       max-width:50rem;
       margin:auto;
-      min-height:calc(100vh - 50px - 1.5rem);
+      min-height:calc(100vh - 50px);
       padding:3rem 0;
-      h1,h2,h3,h4,h5,h6 {font-family:$title-font;}
-      h1 {color:$c;font-weight:700;font-size:2.5rem;line-height:1em;}
-      h2 {color:$c-t;font-weight:400;font-size:1.8rem;line-height:1em;}
-      h3 {color:$c;font-weight:700;font-size:1.8rem;font-style:italic;margin-bottom:0.5rem;}
-      h4 {color:$c-t;font-weight:700; font-size:1.5rem;}
-      h5 {color:$c-tl;font-weight:500; font-size:1.1rem;font-style:italic;}
-      h6 {color:$c-t;font-weight:700; font-size:1rem;}
+      h1,h2,h3,h4,h5,h6 {
+        font-family:$title-font;
+      }
+      h1 {
+        color:$c;font-weight:700;font-size:2.5rem;line-height:1em;text-align:center;
+      }
+      h2 {
+        color:$c-t;font-weight:400;font-size:1.8rem;line-height:1em;text-align:center;
+      }
+      h3 {
+        color:$c;font-weight:700;font-size:1.8rem;font-style:italic;
+      }
+      h4 {
+        color:$c-t;font-weight:700; font-size:1.5rem;
+      }
+      h5 {
+        color:$c-tl;font-weight:500; font-size:1.1rem;font-style:italic;
+      }
+      h6 {
+        color:$c-t;font-weight:700; font-size:1rem;
+      }
       p {
         font-size:1rem;
       }
@@ -152,7 +168,9 @@ html {
           }
         }
       }
-
+      a {
+        text-decoration:none;
+      }
       .flex {
           display: flex;
           justify-content: space-between;
@@ -178,6 +196,8 @@ html {
             color: $c;
           }
         }
+        h1, h2 {text-align:left;}
+        h3 {margin-bottom:0.5rem;}
         #cvHead {padding-bottom:1rem;border-bottom:1px solid $c;}
         #duration p {font-style:italic;margin:0 0.25rem;}
         #contact-info {
@@ -200,11 +220,15 @@ html {
           max-width:30rem;
           margin:2.5rem auto;
           input,textarea {
-            background-color:#f4f4f4;
+            background-color:#f0f0f0;
             padding:0.5rem 0.5rem;
             margin-top:1rem;
             border-left:0.125rem solid $c;
             font-size:0.8rem;
+          }
+          textarea {
+            min-height:6rem;
+            height:auto
           }
           button {
             margin-top:1.5rem;
@@ -215,15 +239,22 @@ html {
             font-size:1.0rem;
             font-weight:bold;
             background-color:$c;
-            color:white;
+            color:$c-tc;
             &:hover {
-              background-color:$c-l1;
+              transform:translate(4px,-4px);
+              box-shadow:-4px 4px 0 #0004;
+            }
+            &:active {
+              transform:translate(0,0);
+              box-shadow:0 0 0 #0000;
             }
           }
           .errorPlaceholder {
             height:1.5rem;
             label {
               margin:0.125rem auto;
+              line-height:1em;
+              padding-left:0.75rem;
               color:$c-tl;
               font-size:0.75rem;
               font-style:italic;
@@ -235,7 +266,7 @@ html {
       }
       &#work {
         section {
-          margin-top:1rem;
+          margin-top:2rem;
           h3 {
              font-weight:800;
             font-size:1.6rem;
@@ -253,9 +284,44 @@ html {
               }
             }
             figcaption {
-             background:$c-d1;
-             color:$c-t;
+             background:$c;
+             color:$c-tc;
              padding: 2rem;
+            }
+          }
+        }
+        menu {
+          display:none;
+          @media screen and (min-width:1500px) {
+            display:block;
+          }
+          position:fixed;
+          bottom:14rem;
+          right: calc(5% + 50rem + ((100vw - 50rem) / 2));
+          z-index:100;
+          li {
+            display:flex;
+            list-style-type:none;
+            a {
+              font-family:$title-font;
+              color:$c-tc;
+              font-weight:bold;
+              padding:1.5rem 2rem;
+              width:100%;
+              transition:0.1s;
+              background: $c;
+              // background: linear-gradient(to bottom right, $c 0%, $c 40%, $c-l2 45%, rgba(255,255,255,1) 50%, $c-l2 55%, $c 60%, $c 100%);
+              background-size:300% 100%;
+              &:hover {
+                // animation: shimmer 0.8s ease-in-out;
+                // animation-delay: 1.2s;
+                transform:translate(4px,-4px);
+                box-shadow:-4px 4px 0 #0004;
+              }
+              &:active {
+                transform:translate(0,0);
+                box-shadow:0 0 0 #0000;
+              }
             }
           }
         }
@@ -270,19 +336,21 @@ html {
       align-items: center;
       justify-content: center;
       text-align:center;
-      background-color:$c-d1;
-      color:white;
+      background-color:$c;
+      color:$c-tc;
       p {
-         margin:0.5rem auto; 
+         margin:0.5rem auto;
          width:90%;
          max-width:25em;
-         color:white;
+         color:$c-tc;
         span {
           margin:0 0.5rem;
-          color: white;
+          color: $c-tc;
         }
       }
     }
+
+
     @media screen and (max-width: 599px) {
       .flex {
         flex-direction: column;
