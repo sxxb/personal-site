@@ -64,11 +64,6 @@ function Cv() {
           <h1>Scott Belcher</h1>
           <h2>C.V</h2>
         </div>
-        <div id="contact-info" className="flex column">
-          <a href="sms:0400123456">0400 123 456</a>
-          <a href="mailto:email@domain.com">email@domain.com</a>
-          <a href="/">Something Else</a>
-        </div>
       </div>
       <div id="cvBody" className="flex column">
         <div id="experience" className="section">
@@ -108,8 +103,7 @@ function Cv() {
         <div id="references" className="section">
           <h3>References</h3>
           <div>
-            <Reference name="Les Clifford" employer="Wavecom" email="les.clifford@wavecom.com.au" phone="xyz" />
-            <Reference name="Jamie Gatt" employer="Lightime Illumination" email="X@Y" phone="xyz" />
+            <p>References available upon request</p>
           </div>
         </div>
       </div>
