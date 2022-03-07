@@ -27,14 +27,14 @@ $title-font: "Barlow Semi Condensed", sans-serif;
 $body-font: "Barlow", sans-serif;
 $transition: 0.2s ease;
 
-// @media (prefers-color-scheme: dark) {
-//     :root {
-//     filter:invert(90%) hue-rotate(180deg);
-//     source, img, video {
-//        filter: invert(100%)  hue-rotate(180deg);
-//      }
-//     }
-// }
+@media (prefers-color-scheme: dark) {
+    :root {
+    filter:invert(90%) hue-rotate(180deg);
+    source, img, video {
+       filter: invert(100%)  hue-rotate(180deg);
+     }
+    }
+}
 
 html {
   font-size:100%;
