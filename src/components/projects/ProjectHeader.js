@@ -12,7 +12,7 @@ function ProjectHeader(props) {
           :
           <div><h1>{props.title}</h1>
           <h2>{props.subtitle}</h2>
-          <Link to="/Work">Return</Link>
+          <Link to="/Work">&#10094; Return</Link>
           </div>
 
   );

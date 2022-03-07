@@ -266,6 +266,12 @@ html {
       &#work {
         section {
           margin-top:2rem;
+          &:first-of-type {
+            margin-top:0;
+          }
+          div {
+            margin-bottom:2rem;
+          }
           h3 {
              font-weight:800;
             font-size:1.6rem;
