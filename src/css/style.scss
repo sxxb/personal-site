@@ -94,10 +94,7 @@ html {
               color:$c-t;
               font-family:$title-font;
               transition:$transition;
-              &:hover {
-                border-bottom:0.1rem solid $c;
-              }
-              &.active {
+              &:hover, &.active {
                 border-bottom:0.1rem solid $c;
               }
             }

@@ -1,6 +1,6 @@
 import React from "react";
 // import ReactDOM from 'react-dom';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 function Nav() {
   return (
@@ -8,19 +8,19 @@ function Nav() {
         <nav>
           <menu>
             <li>
-              <Link to="/Work">work</Link>
+              <NavLink to="/Work" className={({ isActive }) => isActive ? "active" : ""}>work</NavLink>
             </li>
             <li>
-              <Link to="/CV">cv</Link>
+              <NavLink to="/CV">cv</NavLink>
             </li>
             <li>
-              <Link to="/">sxb</Link>
+              <NavLink to="/">sxb</NavLink>
             </li>
             <li>
-              <Link to="/Contact">contact</Link>
+              <NavLink to="/Contact">contact</NavLink>
             </li>
             <li>
-              <Link to="/">tbc</Link>
+              <NavLink to="/">tbc</NavLink>
             </li>
           </menu>
         </nav>
