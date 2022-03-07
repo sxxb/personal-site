@@ -41,6 +41,7 @@ html * {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: 0.2s ease;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   html * {
@@ -254,6 +255,7 @@ main#contact form button {
   font-weight: bold;
   background-color: #ff2b35;
   color: white;
+  transition: 0.1s;
 }
 main#contact form button:hover {
   transform: translate(4px, -4px);
@@ -287,6 +289,9 @@ main#work section h4 {
   font-style: italic;
   font-weight: 400;
   font-size: 1.2rem;
+}
+main#work section a {
+  color: #666666;
 }
 main#work section figure {
   align-items: stretch;
@@ -338,6 +343,52 @@ main#work menu li a:hover {
 main#work menu li a:active {
   transform: translate(0, 0);
   box-shadow: 0 0 0 #0000;
+}
+main#work #noProject {
+  text-align: center;
+}
+main#work #noProject a {
+  margin-top: 1rem;
+  color: #666666;
+  display: inline-block;
+}
+main#work #noProject a:hover {
+  color: #ff2b35;
+}
+main#work #noProject h2 {
+  margin-top: 1rem;
+}
+main#work #noProject h2 a {
+  margin-top: 0;
+  font-weight: 700;
+  color: #333333;
+  font-family: inherit;
+}
+main#work #noProject h2 a:hover {
+  color: #ff2b35;
+}
+main#noPage {
+  text-align: center;
+}
+main#noPage a {
+  margin-top: 1rem;
+  color: #666666;
+  display: inline-block;
+}
+main#noPage a:hover {
+  color: #ff2b35;
+}
+main#noPage h2 {
+  margin-top: 1rem;
+}
+main#noPage h2 a {
+  margin-top: 0;
+  font-weight: 700;
+  color: #333333;
+  font-family: inherit;
+}
+main#noPage h2 a:hover {
+  color: #ff2b35;
 }
 
 footer {

@@ -58,6 +58,7 @@ html {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition:0.2s ease;
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
       -webkit-font-smoothing: auto;
       -moz-osx-font-smoothing: auto;
@@ -240,6 +241,7 @@ html {
             font-weight:bold;
             background-color:$c;
             color:$c-tc;
+            transition:0.1s;
             &:hover {
               transform:translate(4px,-4px);
               box-shadow:-4px 4px 0 #0004;
@@ -272,6 +274,7 @@ html {
             font-size:1.6rem;
           }
           h4 {font-style:italic;font-weight:400;font-size:1.2rem;}
+          a {color:$c-tl}
           figure {
             align-items:stretch;
             picture {
@@ -325,6 +328,53 @@ html {
             }
           }
         }
+        #noProject {
+          text-align:center;
+          a {
+            margin-top:1rem;
+            color:$c-tl;
+            display:inline-block;
+            &:hover {
+              color:$c
+            }
+          }
+          h2 {
+            margin-top:1rem;
+            a {
+              margin-top:0;
+              font-weight:700;
+              color:$c-t;
+              font-family:inherit;
+              &:hover {
+                color:$c
+              }
+            }
+          }
+        }
+      }
+      &#noPage {
+        text-align:center;
+        a {
+          margin-top:1rem;
+          color:$c-tl;
+          display:inline-block;
+          &:hover {
+            color:$c
+          }
+        }
+        h2 {
+          margin-top:1rem;
+          a {
+            margin-top:0;
+            font-weight:700;
+            color:$c-t;
+            font-family:inherit;
+            &:hover {
+              color:$c
+            }
+          }
+        }
+
       }
     }
     footer {
