@@ -312,6 +312,7 @@ main#work section figure picture {
   width: 100%;
   height: auto;
   display: flex;
+  background: none;
 }
 main#work section figure picture source, main#work section figure picture img {
   width: 100%;
