@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function Figure(props) {
   return (
     <figure className="flex">
