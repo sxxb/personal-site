@@ -15,7 +15,7 @@ $c:   hsl(357.2, 100%, 58.4%);
 $c-d1:hsl(357.2, 100%, 45%);
 $c-d2:hsl(357.2, 100%, 35%);
 $c-l1:hsl(357.2, 70%, 70%);
-$c-l2:hsl(357.2, 70%, 85%);
+$c-l2:hsl(357.2, 70%, 80%);
 $c-c: hsl(180, 100%, 50%);
 $c-t: hsl(0, 0%, 20%);
 $c-tl: hsl(0, 0%, 40%);
@@ -136,6 +136,7 @@ html {
       p {
         font-size:1rem;
       }
+
       blockquote {
         display:block;
         width:90%;
@@ -187,9 +188,23 @@ html {
         display:flex;
         justify-content:center;
         flex-direction:column;
-        * {
+        > * {
           text-align:left;
-          margin:0.25rem 0;
+          margin:0.5rem 0;
+          @media screen and (min-width:600px) {
+            margin:0.35rem 0;
+          }
+        }
+        p {
+          a {
+            display:inline-block;
+            // padding-bottom:0.125rem;
+            border-bottom:2px solid $c-l2;
+            &:hover {
+              background:$c-l2;
+              border-bottom:2px solid $c-l2;
+            }
+          }
         }
       }
       &#cv {

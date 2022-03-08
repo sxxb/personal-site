@@ -20,7 +20,7 @@ function Nav() {
               <NavLink to="/Contact">contact</NavLink>
             </li>
             <li>
-              <NavLink to="/">tbc</NavLink>
+              <NavLink to="/NoPage">deadlink</NavLink>
             </li>
           </menu>
         </nav>
