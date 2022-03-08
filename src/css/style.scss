@@ -29,7 +29,7 @@ $transition: 0.2s ease;
 
 @media (prefers-color-scheme: dark) {
     :root {
-    filter:invert(90%) hue-rotate(180deg);
+    filter:invert(95%) hue-rotate(180deg);
     source, img, video {
        filter: invert(100%)  hue-rotate(180deg);
      }
@@ -54,7 +54,7 @@ html {
     font-family: $body-font;
     color:$c-t;
     background:inherit;
-    line-height:1.4em;
+    line-height:1.45em;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -113,12 +113,13 @@ html {
       padding:3rem 0;
       h1,h2,h3,h4,h5,h6 {
         font-family:$title-font;
+        line-height:1.1em;
       }
       h1 {
-        color:$c;font-weight:700;font-size:2.5rem;line-height:1em;text-align:center;
+        color:$c;font-weight:700;font-size:2.5rem;text-align:center;
       }
       h2 {
-        color:$c-t;font-weight:400;font-size:1.8rem;line-height:1em;text-align:center;
+        color:$c-t;font-weight:400;font-size:1.8rem;text-align:center;
       }
       h3 {
         color:$c;font-weight:700;font-size:1.8rem;font-style:italic;
@@ -175,19 +176,48 @@ html {
       .flex {
           display: flex;
           justify-content: space-between;
+          flex-direction:row;
         }
       .centre {align-items: center;}
-      .row {flex-direction:row;}
-      .column {flex-direction:column;}
+      .row {flex-direction:row !important;}
+      .column {flex-direction:column !important;}
       .break {width: 50%;}
 
+      &#home {
+        display:flex;
+        justify-content:center;
+        flex-direction:column;
+        * {
+          text-align:left;
+          margin:0.25rem 0;
+        }
+      }
       &#cv {
-        //todo convert div class=section to section
-        .section {
+        div > section {
           margin-top:1rem;
+          width:100%;
         }
         .item {
-          margin-bottom:2rem;
+          margin-bottom:2.5rem;
+          .heading {
+            align-items:center;
+          }
+          .description p {
+            margin-top:0.5rem;
+            font-size:0.9rem;
+          }
+
+          ul {
+            &:first-of-type {
+              @media screen and (min-width:600px) {
+                padding-right:2.5rem;
+              }
+            }
+            li {
+            display:flex;
+
+            }
+          }
         }
         a {
           color:$c-t;
@@ -213,6 +243,10 @@ html {
         }
       }
       &#contact {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
         form {
           display:flex;
           flex-direction:column;
@@ -268,9 +302,6 @@ html {
       &#work {
         section {
           margin-top:2rem;
-          &:first-of-type {
-            margin-top:0;
-          }
           div {
             margin-bottom:2rem;
           }
@@ -280,6 +311,10 @@ html {
           }
           h4 {font-style:italic;font-weight:400;font-size:1.2rem;}
           a {color:$c-tl}
+          .breadcrumb {
+            display:flex;
+            margin:0.25rem 0;
+          }
           figure {
             align-items:stretch;
             picture {
@@ -408,11 +443,12 @@ html {
 
 
     @media screen and (max-width: 599px) {
-      .flex {
+      main {
+        .flex {
         flex-direction: column;
-        align-items: start;
-      }
-      .break {
+        }
+        .break {
         width: 100%;
+        }
       }
     }

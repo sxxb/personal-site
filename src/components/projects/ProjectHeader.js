@@ -7,12 +7,12 @@ function ProjectHeader(props) {
         location.pathname === "/Work" ?
           <div><h3>{props.title}</h3>
           <h4>{props.subtitle}</h4>
-          <Link to={props.link}>Permalink</Link>
+          <Link to={props.link} className="breadcrumb">Permalink</Link>
           </div>
           :
           <div><h1>{props.title}</h1>
           <h2>{props.subtitle}</h2>
-          <Link to="/Work">&#10094; Return</Link>
+          <Link to="/Work" className="breadcrumb">&#10094; Return</Link>
           </div>
 
   );

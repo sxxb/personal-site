@@ -1,20 +1,13 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function Home() {
   return (
-    <main>
-      <h1>Header</h1>
-      <h2>Subheader</h2>
-      <h3>A section header</h3>
-      <p>A paragraph with <em>emphasis</em>, <strong>strong</strong> content, a <q>quote</q>, <sub>subscript</sub> and <sup>superscript</sup> and finally a <cite>citation</cite>.
-      </p>
-      <ul>
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
-      </ul>
-      <blockquote>Blockquote</blockquote>
-      <code>Code {}</code>
+    <main id="home">
+      <h1>hey mate</h1>
+      <h2>Scott is a marketing and design professional</h2>
+      <p>His pronouns are <strong>he/him</strong> and he lives and works in <strong>Tarntanya (Adelaide)</strong> on the lands of the Kaurna people.</p>
+      <p>He made this website and would love to make one for you too - just <Link to="/Contact">flick him a message</Link> to get things moving.</p>
     </main>
   );
 }

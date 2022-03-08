@@ -18,7 +18,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    filter: invert(90%) hue-rotate(180deg);
+    filter: invert(95%) hue-rotate(180deg);
   }
   :root source, :root img, :root video {
     filter: invert(100%) hue-rotate(180deg);
@@ -45,7 +45,7 @@ html * {
   font-family: "Barlow", sans-serif;
   color: #333333;
   background: inherit;
-  line-height: 1.4em;
+  line-height: 1.45em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -105,19 +105,18 @@ main {
 }
 main h1, main h2, main h3, main h4, main h5, main h6 {
   font-family: "Barlow Semi Condensed", sans-serif;
+  line-height: 1.1em;
 }
 main h1 {
   color: #ff2b35;
   font-weight: 700;
   font-size: 2.5rem;
-  line-height: 1em;
   text-align: center;
 }
 main h2 {
   color: #333333;
   font-weight: 400;
   font-size: 1.8rem;
-  line-height: 1em;
   text-align: center;
 }
 main h3 {
@@ -183,24 +182,50 @@ main a {
 main .flex {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
 }
 main .centre {
   align-items: center;
 }
 main .row {
-  flex-direction: row;
+  flex-direction: row !important;
 }
 main .column {
-  flex-direction: column;
+  flex-direction: column !important;
 }
 main .break {
   width: 50%;
 }
-main#cv .section {
+main#home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+main#home * {
+  text-align: left;
+  margin: 0.25rem 0;
+}
+main#cv div > section {
   margin-top: 1rem;
+  width: 100%;
 }
 main#cv .item {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+}
+main#cv .item .heading {
+  align-items: center;
+}
+main#cv .item .description p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+@media screen and (min-width: 600px) {
+  main#cv .item ul:first-of-type {
+    padding-right: 2.5rem;
+  }
+}
+main#cv .item ul li {
+  display: flex;
 }
 main#cv a {
   color: #333333;
@@ -231,6 +256,12 @@ main#cv #contact-info a {
   line-height: 1.5rem;
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 1.2rem;
+}
+main#contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 main#contact form {
   display: flex;
@@ -286,9 +317,6 @@ main#contact form .errorPlaceholder label {
 main#work section {
   margin-top: 2rem;
 }
-main#work section:first-of-type {
-  margin-top: 0;
-}
 main#work section div {
   margin-bottom: 2rem;
 }
@@ -303,6 +331,10 @@ main#work section h4 {
 }
 main#work section a {
   color: #666666;
+}
+main#work section .breadcrumb {
+  display: flex;
+  margin: 0.25rem 0;
 }
 main#work section figure {
   align-items: stretch;
@@ -427,12 +459,10 @@ footer p span {
 }
 
 @media screen and (max-width: 599px) {
-  .flex {
+  main .flex {
     flex-direction: column;
-    align-items: start;
   }
-
-  .break {
+  main .break {
     width: 100%;
   }
 }

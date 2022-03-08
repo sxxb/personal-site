@@ -41,5 +41,8 @@
       "last 1 safari version"
     ],
     "sass": "sass src/css.style.scss:src/css/style.css --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.49.9"
   }
 }
