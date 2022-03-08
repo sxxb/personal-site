@@ -1,7 +1,6 @@
 import React from "react";
 
 import Figure from "./Figure"
-import Figurevideo from "./Figurevideo"
 import ProjectHeader from "./ProjectHeader"
 
 function Osswebsite() {
