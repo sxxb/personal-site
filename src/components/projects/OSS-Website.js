@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 
 import Figure from "./Figure"
 import Figurevideo from "./Figurevideo"

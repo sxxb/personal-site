@@ -40,21 +40,6 @@ function Education(props) {
     </section>
   )
 }
-function Reference(props) {
-  return (
-    <section className="item">
-      <div className="heading">
-        <div className="title">
-          <h4>{props.name}</h4>
-          <h5>{props.employer}</h5>
-        </div>
-      </div>
-      <div className="description">
-        <p><a href={"mailto:" + props.email} >{props.email}</a> + <a href={"tel:" + props.phone}>{props.phone}</a></p>
-      </div>
-    </section>
-  )
-}
 
 function Cv() {
   return (
