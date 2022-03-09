@@ -34,6 +34,7 @@ function Main() {
           <Route path="*" element={<Noproject />} />
         </Route>
         <Route path="*" element={<Nopage />} />
+        <Route path="/personal-site" element={<Home />} />
       </Routes>
     </Router>
   );

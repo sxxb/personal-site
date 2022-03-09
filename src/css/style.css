@@ -486,10 +486,6 @@ main#noPage {
 main#noPage a {
   margin-top: 1rem;
   color: var(--c-tl);
-  display: inline-block;
-}
-main#noPage a:hover {
-  color: var(--c-tc);
 }
 main#noPage h2 {
   margin-top: 1rem;
@@ -499,9 +495,7 @@ main#noPage h2 a {
   font-weight: 700;
   color: var(--c-t);
   font-family: inherit;
-}
-main#noPage h2 a:hover {
-  color: var(--c-tc);
+  border-bottom: none;
 }
 
 footer {

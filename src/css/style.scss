@@ -448,10 +448,7 @@ main {
         a {
           margin-top:1rem;
           color:var(--c-tl);
-          display:inline-block;
-          &:hover {
-            color:var(--c-tc);
-          }
+
         }
         h2 {
           margin-top:1rem;
@@ -460,9 +457,7 @@ main {
             font-weight:700;
             color:var(--c-t);
             font-family:inherit;
-            &:hover {
-              color:var(--c-tc);
-            }
+            border-bottom:none;
           }
         }
       }
