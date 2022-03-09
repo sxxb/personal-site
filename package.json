@@ -21,7 +21,8 @@
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "sass --watch src/css.style.scss src/css/style.css"
   },
   "eslintConfig": {
     "extends": [
@@ -40,7 +41,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ],
-    "sass": "sass src/css.style.scss:src/css/style.css --watch"
+    "sass": "sass --watch src/css.style.scss src/css/style.css"
   },
   "devDependencies": {
     "sass": "^1.49.9"
