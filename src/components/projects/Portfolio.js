@@ -1,8 +1,10 @@
-import React from "react";
+import React, { Suspense } from "react";
 
-import Tnpprime from "./TnP-Prime"
-import Osswebsite from "./OSS-Website"
-import Ptvideos from "./Tutorial-Videos"
+import Loading from "../Loading"
+
+const Tnpprime = React.lazy(() => import("./TnP-Prime"));
+const Osswebsite = React.lazy(() => import("./OSS-Website"));
+const Ptvideos = React.lazy(() => import("./Tutorial-Videos"));
 
 function Portfolio() {
   return (
@@ -14,9 +16,15 @@ function Portfolio() {
         <li><a href="#Osswebsite">OSS Website</a></li>
         <li><a href="#Ptvideos">Product Tutorial Videos</a></li>
       </menu>
-      <Tnpprime />
-      <Osswebsite />
-      <Ptvideos />
+      <Suspense fallback={<Loading />}>
+        <Tnpprime />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <Osswebsite />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <Ptvideos />
+      </Suspense>
     </div>
   );
 }
